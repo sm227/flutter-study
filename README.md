@@ -3,7 +3,7 @@
 A new Flutter project.
 
 ## Wallet UI
-### 📱 Simulator Screenshot - Pixel 3a
+### 📱 Simulator Screenshot - iPhone 15 Pro Max
 <img src="lib/img/Screenshot_20240120_185655.png" width="300"/>
 
 ## Getting Started
