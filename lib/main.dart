@@ -7,7 +7,6 @@ void main() {
 }
 
 class App extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,9 +26,9 @@ class App extends StatelessWidget {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                     Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children:  [
+                      children: [
                         Text(
                           'Hi, Seungmin',
                           style: TextStyle(
@@ -63,7 +62,7 @@ class App extends StatelessWidget {
                   height: 5,
                 ),
                 const Text(
-                  '\$5 194 482',
+                  '₩5,194,482',
                   style: TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.w600,
@@ -118,7 +117,7 @@ class App extends StatelessWidget {
                 const CurrencyCard(
                   name: 'Euro',
                   code: 'EUR',
-                  amount: '6 428',
+                  amount: '6,428',
                   icon: Icons.euro_rounded,
                   isInverted: false,
                   offset: Offset(0, 0),
@@ -126,19 +125,18 @@ class App extends StatelessWidget {
                 const CurrencyCard(
                   name: 'Bitcoin',
                   code: 'BTC',
-                  amount: '9 785',
+                  amount: '8',
                   icon: Icons.currency_bitcoin,
                   isInverted: true,
                   offset: Offset(0, -20),
                 ),
                 const CurrencyCard(
-                  name: 'Dollar',
-                  code: 'USD',
-                  amount: '428',
-                  icon: Icons.monetization_on_outlined,
-                  isInverted: false,
-                    offset: Offset(0, -40)
-                ),
+                    name: 'Dollar',
+                    code: 'USD',
+                    amount: '428',
+                    icon: Icons.monetization_on_outlined,
+                    isInverted: false,
+                    offset: Offset(0, -40)),
               ],
             ),
           ),
