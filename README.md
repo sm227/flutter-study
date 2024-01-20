@@ -2,7 +2,8 @@
 
 A new Flutter project.
 
-## 📱 Simulator Screenshot - Pixel 3a
+## Wallet UI
+### 📱 Simulator Screenshot - Pixel 3a
 <img src="lib/img/Screenshot_20240120_185655.png" width="300"/>
 
 ## Getting Started
