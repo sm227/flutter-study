@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -63,6 +64,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        shadowColor: Colors.black,
+        elevation: 10,
+        title: Text('Pomodoro'),
+        centerTitle: true,
+      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
         children: [
@@ -98,12 +106,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Theme.of(context).cardColor,
                     onPressed: onResetPressed,
                     icon: Icon(Icons.restart_alt_sharp),
+                    tooltip: '초기화',
                   ),
+                  Text(
+                    '초기화',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  )
                 ],
               ),
             ),
           ),
-          Flexible(
+          const Flexible(
             flex: 1,
             fit: FlexFit.tight,
             child: Row(
@@ -113,12 +130,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   'test1',
                   style: TextStyle(
                     fontSize: 40,
+                    color: Colors.white,
                   ),
                 ),
                 Text(
                   'test2',
                   style: TextStyle(
                     fontSize: 40,
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -140,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Pomodoros',
+                          'Total',
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
@@ -153,6 +172,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontSize: 50,
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).textTheme.headline1!.color,
+                          ),
+                        ),
+                        Text(
+                          'Made by 승민',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
                           ),
                         )
                       ],
