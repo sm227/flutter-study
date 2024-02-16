@@ -8,20 +8,26 @@ import 'package:untitled/assign/movieApp/models/movie_model.dart';
 
 class ApiService {
   static const String baseUrl = "https://movies-api.nomadcoders.workers.dev";
-  static const String popular = "/popular";
+  static const String popular = "popular";
   static const String now = "/now-playing";
 
-  static Future<List<MovieModel>> getPopularMovies() async {
+// static Future<List<MovieModel>>
+  Future<List<MovieModel>> getPopularMovies() async {
     List<MovieModel> movieInstances = [];
-    final url = Uri.parse(baseUrl + popular);
+    final url = Uri.parse('$baseUrl/$popular');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
-      final movies = jsonDecode(response.body);
+      // final movies = jsonDecode(response.body)['results'];
+      // print(movies);
+      // return;
+
+      final List<dynamic> movies = jsonDecode(response.body)['results'];
       for (var movie in movies) {
         final instance = MovieModel.fromJson(movie);
         movieInstances.add(instance);
       }
+      // print(MovieModel.id);
       print(movieInstances);
       return movieInstances;
     }

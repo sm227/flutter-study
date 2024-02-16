@@ -4,7 +4,7 @@ import 'package:untitled/assign/movieApp/services/api_services.dart';
 
 void main() {
   runApp(MyWidget());
-  ApiService.getPopularMovies();
+  ApiService().getPopularMovies();
 }
 
 class MyWidget extends StatelessWidget {
