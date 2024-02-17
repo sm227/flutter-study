@@ -10,11 +10,60 @@ class ApiService {
   static const String baseUrl = "https://movies-api.nomadcoders.workers.dev";
   static const String popular = "/popular";
   static const String now = "/now-playing";
+  static const String soon = "/coming-soon";
 
 // static Future<List<MovieModel>>
   Future<List<MovieModel>> getPopularMovies() async {
     List<MovieModel> movieInstances = [];
     final url = Uri.parse(baseUrl + popular);
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      // final movies = jsonDecode(response.body)['results'];
+      // print(movies);
+      // return;
+      // (response.body)['results'];
+
+      final movies = jsonDecode(utf8.decode(response.bodyBytes))['results'];
+      for (var movie in movies) {
+        final instance = MovieModel.fromJson(movie);
+        movieInstances.add(instance);
+        print(instance.posterPath);
+      }
+      // print(MovieModel.id);
+      // print(movieInstances[].title);
+      return movieInstances;
+    }
+    throw Error();
+  }
+
+  Future<List<MovieModel>> getNowMovies() async {
+    List<MovieModel> movieInstances = [];
+    final url = Uri.parse(baseUrl + now);
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      // final movies = jsonDecode(response.body)['results'];
+      // print(movies);
+      // return;
+      // (response.body)['results'];
+
+      final movies = jsonDecode(utf8.decode(response.bodyBytes))['results'];
+      for (var movie in movies) {
+        final instance = MovieModel.fromJson(movie);
+        movieInstances.add(instance);
+        print(instance.posterPath);
+      }
+      // print(MovieModel.id);
+      // print(movieInstances[].title);
+      return movieInstances;
+    }
+    throw Error();
+  }
+
+  Future<List<MovieModel>> getSoonMovies() async {
+    List<MovieModel> movieInstances = [];
+    final url = Uri.parse(baseUrl + soon);
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
