@@ -21,14 +21,16 @@ class ApiService {
       // final movies = jsonDecode(response.body)['results'];
       // print(movies);
       // return;
+      // (response.body)['results'];
 
-      final List<dynamic> movies = jsonDecode(response.body)['results'];
+      final movies = jsonDecode(utf8.decode(response.bodyBytes))['results'];
       for (var movie in movies) {
         final instance = MovieModel.fromJson(movie);
         movieInstances.add(instance);
+        print(instance.posterPath);
       }
       // print(MovieModel.id);
-      print(movieInstances.length);
+      // print(movieInstances[].title);
       return movieInstances;
     }
     throw Error();
