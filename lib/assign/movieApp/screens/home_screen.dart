@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return SizedBox(
-                    height: 270,
+                    height: 280,
                     child: makeNowList(snapshot),
                   );
                 }
@@ -113,6 +113,7 @@ class HomeScreen extends StatelessWidget {
           overView: movie.overView,
           width: a,
           height: b,
+          vote: movie.vote,
         );
       },
       separatorBuilder: (context, index) => const SizedBox(
@@ -133,6 +134,7 @@ class HomeScreen extends StatelessWidget {
           title: movie.title,
           posterPath: movie.posterPath,
           overView: movie.overView,
+          vote: movie.vote,
         );
       },
       separatorBuilder: (context, index) => const SizedBox(
@@ -153,6 +155,7 @@ class HomeScreen extends StatelessWidget {
           title: movie.title,
           posterPath: movie.posterPath,
           overView: movie.overView,
+          vote: movie.vote,
         );
       },
       separatorBuilder: (context, index) => const SizedBox(

@@ -5,6 +5,7 @@ class Movie extends StatelessWidget {
   final index = 1;
   final int id;
   final double width, height;
+  final vote;
   final String title, posterPath, overView;
   const Movie({
     super.key,
@@ -14,6 +15,7 @@ class Movie extends StatelessWidget {
     required this.width,
     required this.height,
     required this.overView,
+    required this.vote,
   });
 
   @override
@@ -29,6 +31,7 @@ class Movie extends StatelessWidget {
                 posterPath: posterPath,
                 index: index,
                 overView: overView,
+                vote: vote,
               ),
             ));
       },

@@ -4,6 +4,7 @@ import 'package:untitled/assign/movieApp/screens/detail_screen.dart';
 class NowMovie extends StatelessWidget {
   final int id;
   final index = 2;
+  final vote;
 
   // final double width, height;
   final String title, posterPath, overView;
@@ -13,6 +14,7 @@ class NowMovie extends StatelessWidget {
     required this.title,
     required this.posterPath,
     required this.overView,
+    required this.vote,
   });
 
   @override
@@ -28,6 +30,7 @@ class NowMovie extends StatelessWidget {
                 posterPath: posterPath,
                 index: index,
                 overView: overView,
+                vote: vote,
               ),
             ));
       },
@@ -51,9 +54,14 @@ class NowMovie extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
-            title,
-            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+          Container(
+            alignment: Alignment.topCenter,
+            width: 200,
+            height: 50,
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+            ),
           )
         ],
       ),

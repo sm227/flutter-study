@@ -4,6 +4,7 @@ import 'package:untitled/assign/movieApp/screens/detail_screen.dart';
 class SoonMovie extends StatelessWidget {
   final int id;
   final index = 3;
+  final vote;
   // final double width, height;
   final String title, posterPath, overView;
   const SoonMovie({
@@ -12,6 +13,7 @@ class SoonMovie extends StatelessWidget {
     required this.title,
     required this.posterPath,
     required this.overView,
+    required this.vote,
   });
 
   @override
@@ -27,6 +29,7 @@ class SoonMovie extends StatelessWidget {
                 posterPath: posterPath,
                 overView: overView,
                 index: index,
+                vote: vote,
               ),
             ));
       },
